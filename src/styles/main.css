@@ -1,0 +1,101 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(to left top, #b3e0ff, #cdd6ff, #e9cbfb);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 2rem;
+
+  background-color: #ffffff;
+  padding: 2rem 2.5rem 2.2rem 2.5rem;
+  border-radius: 2rem;
+  margin: 1rem 0;
+}
+
+h1 {
+  color: #d6d2fe;
+  text-transform: uppercase;
+  font-size: 3.6rem;
+  text-align: center;
+}
+
+#reset-button {
+  border: none;
+  padding: .8rem;
+  width: 100%;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #d6d2fe;
+  font-weight: 500;
+  font-size: 1.2rem;
+  cursor: pointer;
+  max-width: 90vw;
+}
+
+.game {
+  width: 630px;
+  min-height: 500px;
+  max-width: 90vw;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 1rem;
+  perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  min-width: 23%;
+  min-height: 22%;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 3rem;
+  padding: 1.5rem 2rem;
+  transform-style: preserve-3d;
+
+  transform: rotateY(0deg);
+  transition: .4s;
+}
+
+.card.open {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  transform: rotateX(0deg);
+  backface-visibility: hidden;
+}
+
+.front {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0f9ff;
+  transform: rotateY(-180deg);
+}
+
+.back {
+  background-color: #d6d2fe;
+  background-image: linear-gradient(to left top, #b3e0ff, #cdd6ff, #e9cbfb);
+}
+
+@media screen and (max-width: 630px) {
+  .container {
+    margin: 0;
+    border-radius: 0;
+  }
+}
